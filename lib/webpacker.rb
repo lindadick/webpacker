@@ -15,7 +15,7 @@ module Webpacker
 
   def with_node_env(env)
     original = ENV["NODE_ENV"]
-    ENV["NODE_ENV"] = env
+    ENV["NODE_ENV"] ||= env
     yield
   ensure
     ENV["NODE_ENV"] = original
